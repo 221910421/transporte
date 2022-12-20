@@ -34,7 +34,7 @@
                         <td>{{ $detalleCargas->peso }}</td>
                         <td>{{ $detalleCargas->cantidad }}</td>
                         <td>
-                           
+                            <a href="#"><i class="fa fa-fw fa-eye"></i> Dar de baja al transportista</a>
                         </td>
                     </tr>
                 @endforeach
