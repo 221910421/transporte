@@ -11,6 +11,7 @@ class loginController extends Controller
     $consulta = usuarios::where('usuario', $request->usuario)->where('contrasena', $request->contrasena)->where('estado', 'activo')->first();
     if(count($consulta) > 0){
         if(usuario->rol == 'transportista'){
+            $request->session()->put('sessionId', $consulta->id);
             return view('crearCarga');
         }else{
             return view('Menu');
