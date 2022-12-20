@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\usuarios;
 use Illuminate\Http\Request;
+use App\Models\usuarios;
 
 class transportitasController extends Controller
 {
@@ -13,15 +14,9 @@ class transportitasController extends Controller
         ->with(['transportistas'=>$transportistas]);
     }
 
-    public function editarTransportistas(Request $request){
-        $transportista = usuarios::where('id', $request->id)->first();
-        return view('editarTransportistas')
-        ->with('transportista', $transportista);
-    }
-
     public function actualizarTransportistas(Request $request){
         $transportista = usuarios::where('id', $request->id)->first();
-        $transportista->estado = $request->estado;
+        $transportista->estado = 'inactivo';
         $transportista->save();
         return view('verTransportistas');
     }

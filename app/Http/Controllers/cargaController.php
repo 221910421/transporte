@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DetalleCarga;
+use App\Models\usuarios;
 
 class cargaController extends Controller
 {
     public function guardarDetalleCarga(Request $request){
         $detalleCarga = DetalleCarga::create([
-            'transportista_id' => session('sessionId'),
+            'transportistaId' => session('sessionId'),
             'peso' => $request->peso,
             'cantidad' => $request->cantidad,
             'salida' => $request->salida,
@@ -17,7 +18,7 @@ class cargaController extends Controller
             'tipo' => $request->tipo
         ]);
 
-        return route('carga');
+        echo '<script language="javascript"> alert("Carga creada correctamente");</script>';
 
     }
 
@@ -28,7 +29,8 @@ class cargaController extends Controller
 
     public function index(){
         $detalleCarga = DetalleCarga::all();
-        return view('carga')->with(['detalleCarga' => $detalleCarga]);
+        $Transportistas = usuarios::all();
+        return view('carga')->with(['detalleCarga' => $detalleCarga])->with(['Transportistas' => $Transportistas]);
     }
 
 

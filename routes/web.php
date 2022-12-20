@@ -32,3 +32,5 @@ Route::get('verTransportistas', 'App\Http\Controllers\transportitasController@ve
 
 
 Route::post('login', 'App\Http\Controllers\loginController@login')->name('login');
+
+Route::get('baja', 'App\Http\Controllers\transportitasController@actualizarTransportistas')->name('baja');
