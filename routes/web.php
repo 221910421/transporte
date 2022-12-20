@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cargaController;
-
+use App\Http\Controllers\transportitasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +27,8 @@ Route::get('crearCarga', function () {
 });
 
 Route::post('guardarDetalleCarga', 'App\Http\Controllers\cargaController@guardarDetalleCarga')->name('guardarDetalleCarga');
+Route::get('verTransportistas', 'App\Http\Controllers\transportitasController@verTransportistas')->name('verTransportistas');
+
+
 
 Route::post('login', 'App\Http\Controllers\loginController@login')->name('login');

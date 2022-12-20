@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\usuarios;
 use Illuminate\Http\Request;
 
 class transportitasController extends Controller
 {
     public function verTransportistas(){
         $transportistas = usuarios::where('rol', 'transportista')->get();
-        return view('verTransportistas')
-        ->with('transportistas', $transportistas);
+        return view('usuarios')
+        ->with(['transportistas'=>$transportistas]);
     }
 
     public function editarTransportistas(Request $request){
