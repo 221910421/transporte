@@ -21,5 +21,10 @@ Route::get('/', function () {
 Route::resource('carga', cargaController::class);
 
 //Route::get('/carga',[CargaController::class,'carga']);// mostrar todas la actividades
-//     return view('home');
-// });
+
+Route::get('crearCarga', function () {
+    return view('crearDetalle');
+});
+
+Route::post('guardarDetalleCarga', 'App\Http\Controllers\cargaController@guardarDetalleCarga')->name('guardarDetalleCarga');
+
