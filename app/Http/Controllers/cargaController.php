@@ -21,8 +21,15 @@ class cargaController extends Controller
 
     }
 
-    public function varCarga(){
+    // public function varCarga(){
+    //     $detalleCarga = DetalleCarga::all();
+    //     print_r($detalleCarga);
+    // }
+
+    public function index(){
         $detalleCarga = DetalleCarga::all();
-        print_r($detalleCarga);
+        return view('carga')->with(['detalleCarga' => $detalleCarga]);
     }
+
+    
 }
