@@ -14,7 +14,7 @@ class loginController extends Controller
             $request->session()->put('sessionId', $consulta->id);
             return view('crearDetalle');
         }else{
-            return route('carga');
+            return redirect()->route('carga');
         }
     }else{
         return view('home');

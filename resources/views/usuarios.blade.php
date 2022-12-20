@@ -18,7 +18,7 @@
                     <th>Apellidos</th>
                     <th>Rol</th>
                     <th>Estatus</th>
-                    
+
                     <th></th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                         <td>{{ $transportista->rol }}</td>
                         <td>{{ $transportista->estado }}</td>
                         <td>
-                            <a href="#"><i class="fa fa-fw fa-eye"></i> Dar de baja al transportista</a>
+                            <a href="/baja?id={{$transportista->id}}"><i class="fa fa-fw fa-eye"></i> Dar de baja al transportista</a>
                         </td>
                     </tr>
                 @endforeach
