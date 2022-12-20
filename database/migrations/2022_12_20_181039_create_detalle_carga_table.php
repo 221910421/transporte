@@ -15,14 +15,12 @@ return new class extends Migration
     {
         Schema::create('detalle_carga', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('paqueteId');
-            $table->foreign('paqueteId')->references('id')->on('paquetes');
-
-            $table->unsignedBigInteger('nombreId');
-            $table->foreign('nombreId')->references('id')->on('sucursales');
-
-            $table->unsignedBigInteger('vehiculoId');
-            $table->foreign('vehiculoId')->references('id')->on('vehiculos');
+            $table->string('peso')->comment('Peso del paquete');
+            $table->string('cantidad')->comment('Cantidad de paquete');
+            $table->string('salida')->comment('Lugar de salida');
+            $table->string('destino')->comment('Lugar de destino');
+            $table->enum('tipo',['Trailer','Torton','Camioneta'])->comment('Tipo de vehiculo');
+            
             $table->timestamps();
         });
     }
