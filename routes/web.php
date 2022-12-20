@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('carga', cargaController::class);
+Route::get('carga', 'App\Http\Controllers\cargaController@index')->name('carga');
 
 //Route::get('/carga',[CargaController::class,'carga']);// mostrar todas la actividades
 

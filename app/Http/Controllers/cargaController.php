@@ -17,7 +17,7 @@ class cargaController extends Controller
             'tipo' => $request->tipo
         ]);
 
-        return route('verCarga');
+        return route('carga');
 
     }
 
