@@ -17,7 +17,7 @@ class loginController extends Controller
             return route('carga');
         }
     }else{
-        return view('login');
+        return view('home');
     }
     }
 }

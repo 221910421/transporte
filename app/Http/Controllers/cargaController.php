@@ -9,7 +9,7 @@ class cargaController extends Controller
 {
     public function guardarDetalleCarga(Request $request){
         $detalleCarga = DetalleCarga::create([
-            'transportista_id' => session('sessionId'),
+            'transportistaId' => session('sessionId'),
             'peso' => $request->peso,
             'cantidad' => $request->cantidad,
             'salida' => $request->salida,
@@ -17,7 +17,7 @@ class cargaController extends Controller
             'tipo' => $request->tipo
         ]);
 
-        return route('carga');
+       return redirect()->route('carga');
 
     }
 
