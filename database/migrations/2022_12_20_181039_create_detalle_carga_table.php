@@ -15,17 +15,11 @@ return new class extends Migration
     {
         Schema::create('detalle_carga', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('paquetePesoId');
-            $table->foreign('paquetePesoId')->references('id')->on('paquetes');
+            $table->unsignedBigInteger('paqueteId');
+            $table->foreign('paqueteId')->references('id')->on('paquetes');
 
-            $table->unsignedBigInteger('paqueteCantidadId');
-            $table->foreign('paqueteCantidadId')->references('id')->on('paquetes');
-
-            $table->unsignedBigInteger('nombreSalidaId');
-            $table->foreign('nombreSalidaId')->references('id')->on('sucursales');
-
-            $table->unsignedBigInteger('nombreDestinoId');
-            $table->foreign('nombreDestinoId')->references('id')->on('sucursales');
+            $table->unsignedBigInteger('nombreId');
+            $table->foreign('nombreId')->references('id')->on('sucursales');
 
             $table->unsignedBigInteger('vehiculoId');
             $table->foreign('vehiculoId')->references('id')->on('vehiculos');

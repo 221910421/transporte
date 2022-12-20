@@ -12,10 +12,8 @@ class detalleCarga extends Model
     protected $table = 'detalle_carga';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'paquetePesoId',
-        'paqueteCantidadId', 
-        'nombreSalidaId',
-        'nombreDestinoId',
+        'paqueteId', 
+        'nombreId',
         'vehiculoId'
     ];
 
