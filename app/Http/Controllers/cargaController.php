@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DetalleCarga;
+use App\Models\usuarios;
 
 class cargaController extends Controller
 {
@@ -17,7 +18,7 @@ class cargaController extends Controller
             'tipo' => $request->tipo
         ]);
 
-       return redirect()->route('carga');
+        echo '<script language="javascript"> alert("Carga creada correctamente");</script>';
 
     }
 
@@ -28,7 +29,8 @@ class cargaController extends Controller
 
     public function index(){
         $detalleCarga = DetalleCarga::all();
-        return view('carga')->with(['detalleCarga' => $detalleCarga]);
+        $Transportistas = usuarios::all();
+        return view('carga')->with(['detalleCarga' => $detalleCarga])->with(['Transportistas' => $Transportistas]);
     }
 
 

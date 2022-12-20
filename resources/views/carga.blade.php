@@ -21,7 +21,7 @@
                     <th>Fecha y Hora</th>
                     <th>Peso total de la carga</th>
                     <th>Cantidad de paquetes</th>
-                    
+                    <th>Acciones</th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,12 +29,17 @@
                 @foreach ($detalleCarga as $detalleCargas)
                     <tr>
                         <td>{{ $detalleCargas->id }}</td>
-                        {{-- <td>{{ $$detalleCargas->nombre }}</td> --}}
+                        @foreach ($Transportistas as $Transportista)
+                            @if ($Transportista->id == $detalleCargas->transportistaId)
+                                <td>{{ $Transportista->nombre }} {{ $Transportista->apellidos }}</td>
+                            @endif
+                        @endforeach
                         <td>{{ $detalleCargas->tipo }}</td>
                         <td>{{ $detalleCargas->peso }}</td>
+                        <td>{{ $detalleCargas->created_at }}</td>
                         <td>{{ $detalleCargas->cantidad }}</td>
                         <td>
-                            <a href="#"><i class="fa fa-fw fa-eye"></i> Dar de baja al transportista</a>
+                            <a href="/baja?id={{$Transportista->id}}"><i class="fa fa-fw fa-eye"></i> Dar de baja al transportista</a>
                         </td>
                     </tr>
                 @endforeach

@@ -29,3 +29,5 @@ Route::get('crearCarga', function () {
 Route::post('guardarDetalleCarga', 'App\Http\Controllers\cargaController@guardarDetalleCarga')->name('guardarDetalleCarga');
 
 Route::post('login', 'App\Http\Controllers\loginController@login')->name('login');
+
+Route::get('baja', 'App\Http\Controllers\transportitasController@actualizarTransportistas')->name('baja');
