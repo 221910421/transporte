@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::resource('carga', cargaController::class);
 
 //Route::get('/carga',[CargaController::class,'carga']);// mostrar todas la actividades
+//     return view('home');
+// });
