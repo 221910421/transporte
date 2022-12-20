@@ -16,4 +16,11 @@ class usuariosController extends Controller
             return view('login');
         }
     }
+
+    public function index() {
+
+        return 'login';
+    }
+
+
 }
