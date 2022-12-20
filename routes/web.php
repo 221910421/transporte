@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('crearCarga', function () {
@@ -23,3 +23,4 @@ Route::get('crearCarga', function () {
 
 Route::post('guardarDetalleCarga', 'App\Http\Controllers\cargaController@guardarDetalleCarga')->name('guardarDetalleCarga');
 
+Route::post('login', 'App\Http\Controllers\loginController@login')->name('login');
