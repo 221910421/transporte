@@ -22,3 +22,4 @@ Route::get('crearCarga', function () {
 });
 
 Route::post('guardarDetalleCarga', 'App\Http\Controllers\cargaController@guardarDetalleCarga')->name('guardarDetalleCarga');
+
