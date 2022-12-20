@@ -9,7 +9,7 @@ class cargaController extends Controller
 {
     public function guardarDetalleCarga(Request $request){
         $detalleCarga = DetalleCarga::create([
-            'transportista_id' => $session->get('sessionId'),
+            'transportista_id' => session('sessionId'),
             'peso' => $request->peso,
             'cantidad' => $request->cantidad,
             'salida' => $request->salida,
@@ -31,5 +31,5 @@ class cargaController extends Controller
         return view('carga')->with(['detalleCarga' => $detalleCarga]);
     }
 
-    
+
 }

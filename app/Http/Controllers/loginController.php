@@ -14,7 +14,7 @@ class loginController extends Controller
             $request->session()->put('sessionId', $consulta->id);
             return view('crearCarga');
         }else{
-            return view('Menu');
+            return route('carga');
         }
     }else{
         return view('login');
